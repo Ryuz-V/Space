@@ -3,36 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space</title>
+    <title>Space Quiz - Test Your Knowledge</title>
     <!-- Link -->
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(122, 162, 247, 0.3);
+            color: white;
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz-title {
+            font-size: 2.5rem;
+            color: #7aa2f7;
+            margin-bottom: 10px;
+        }
+
+        .quiz-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .question-container {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(122, 162, 247, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(122, 162, 247, 0.3);
+        }
+
+        .question-number {
+            color: #7aa2f7;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(122, 162, 247, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .option:hover {
+            background: rgba(122, 162, 247, 0.2);
+            border-color: #7aa2f7;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            background: rgba(122, 162, 247, 0.3);
+            border-color: #7aa2f7;
+        }
+
+        .option.correct {
+            background: rgba(76, 175, 80, 0.3);
+            border-color: #4CAF50;
+        }
+
+        .option.incorrect {
+            background: rgba(244, 67, 54, 0.3);
+            border-color: #F44336;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            background: #7aa2f7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: #5d8ce0;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .submit-btn {
+            background: #4CAF50;
+            width: 100%;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: #45a049;
+        }
+
+        .results-container {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .score-display {
+            font-size: 3rem;
+            color: #7aa2f7;
+            margin: 20px 0;
+        }
+
+        .score-message {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .restart-btn {
+            padding: 15px 30px;
+            background: #7aa2f7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .restart-btn:hover {
+            background: #5d8ce0;
+            transform: translateY(-2px);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(122, 162, 247, 0.3);
+            border-radius: 3px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #7aa2f7;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .quiz-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: rgba(122, 162, 247, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid rgba(122, 162, 247, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background: rgba(122, 162, 247, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
-
-<!-- shooting star -->
+    <!-- shooting star -->
     <div class="shooting-star" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
     <div class="shooting-star" style="left: 30%; top: 50%; animation-delay: 1s;"></div>
     <div class="shooting-star" style="left: 70%; top: 30%; animation-delay: 2s;"></div>
     <div class="shooting-star" style="left: 90%; top: 80%; animation-delay: 3s;"></div>
-<!-- End Of Shooting Star -->
+    <!-- End Of Shooting Star -->
 
+    <a href="/index.html" class="home-btn">
+        <i data-feather="home"></i> Back to Home
+    </a>
 
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1 class="quiz-title">Space Knowledge Quiz</h1>
+            <p class="quiz-description">Test your knowledge about our amazing universe!</p>
+        </div>
 
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
 
+        <div class="quiz-stats">
+            <span id="question-counter">Question 1 of 10</span>
+            <span id="score-display">Score: 0</span>
+        </div>
 
+        <div id="quiz-content">
+            <!-- Questions will be loaded here by JavaScript -->
+        </div>
 
+        <div class="navigation-buttons">
+            <button class="nav-btn" id="prev-btn" disabled>Previous</button>
+            <button class="nav-btn" id="next-btn">Next Question</button>
+            <button class="nav-btn submit-btn" id="submit-btn" style="display: none;">Submit Quiz</button>
+        </div>
+    </div>
 
-
-
-    <script src="/js/script.js"></script>
+    <script src="/js/quiz.js"></script>
     <script>
         feather.replace();
     </script>
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

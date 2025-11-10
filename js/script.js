@@ -772,16 +772,3 @@ function animateGallery() {
 document.addEventListener('DOMContentLoaded', () => {
     animateGallery();
 });
-
-// Mobile menu toggle
-const menuToggle = document.createElement('button');
-menuToggle.className = 'menu-toggle';
-menuToggle.innerHTML = '<i data-feather="menu"></i>';
-document.querySelector('nav').appendChild(menuToggle);
-
-menuToggle.addEventListener('click', function() {
-    document.querySelector('.top').classList.toggle('active');
-});
-
-// Re-initialize Feather icons after adding new ones
-feather.replace();e

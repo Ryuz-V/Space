@@ -1138,6 +1138,55 @@ nav.scrolled {
 
 /* End Of Gallery */
 
+/* quizz */
+.quiz {
+    padding: 5px 20px;
+    position: relative;
+    margin-top: 160px;
+}
+
+.heading {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.text-13 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #fff, #7aa2f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.text-14 {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.link-quiz {
+    position: relative;
+    text-align: center;
+}
+
+.quiz-button {
+    padding: 15px 35px;
+    background-color: #7aa2f7;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(122, 162, 247, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+
 /* Footer */
 footer {
     background-color: #000;
@@ -1252,343 +1301,4 @@ footer {
     color: #aaa;
     font-size: 0.8em;
     transform: translateY(5px) translateX(px);
-}
-
-/* responsive.css */
-/* Mobile First Approach */
-
-/* Base responsive adjustments */
-* {
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 14px; /* Base font size for mobile */
-}
-
-body {
-    overflow-x: hidden;
-}
-
-/* Responsive Typography */
-h1 {
-    font-size: 2rem;
-}
-
-h2 {
-    font-size: 1.8rem;
-}
-
-h3 {
-    font-size: 1.5rem;
-}
-
-h4 {
-    font-size: 1rem;
-}
-
-/* Responsive Navigation */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        padding: 10px 0;
-    }
-    
-    .logo img {
-        height: 40px;
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-    
-    .top ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-right: 0;
-    }
-    
-    .media-social {
-        margin-right: 0;
-        margin-top: 10px;
-    }
-    
-    nav ul li {
-        margin: 5px 0;
-    }
-}
-
-/* Responsive Hero Section */
-@media (max-width: 1024px) {
-    .hero #text {
-        font-size: 10rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero #text {
-        font-size: 5rem;
-        margin-left: 0;
-        text-align: center;
-    }
-    
-    .hero #moon,
-    .hero #earth,
-    .hero #astranout,
-    .hero #merkuarius,
-    .hero #saturnus {
-        width: 60%;
-    }
-    
-    .hero #astranout {
-        margin-left: 0;
-        transform: translateX(-50%) translateY(150px);
-    }
-}
-
-@media (max-width: 480px) {
-    .hero #text {
-        font-size: 3rem;
-    }
-    
-    .hero #moon,
-    .hero #earth,
-    .hero #astranout,
-    .hero #merkuarius,
-    .hero #saturnus {
-        width: 80%;
-    }
-}
-
-/* Responsive About Section */
-@media (max-width: 768px) {
-    .content-block,
-    .content-block-reverse {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .content-block img,
-    .content-block-reverse img {
-        width: 100%;
-    }
-    
-    .text-3,
-    .text-5 {
-        margin-top: 0;
-    }
-    
-    .content-block #rocket {
-        margin-top: 0;
-    }
-    
-    .text-content h1 {
-        font-size: 1.8rem;
-    }
-}
-
-/* Responsive Planet Section */
-@media (max-width: 1024px) {
-    .content-1,
-    .content-2,
-    .content-3,
-    .content-4,
-    .content-5,
-    .content-6,
-    .content-7,
-    .content-8 {
-        flex-direction: column;
-        text-align: center;
-        margin: 100px auto;
-        padding: 0 20px;
-    }
-    
-    .content-2,
-    .content-4,
-    .content-6,
-    .content-8 {
-        flex-direction: column;
-    }
-    
-    .neptune-text,
-    .uranus-text,
-    .saturn-text,
-    .jupiter-text,
-    .mars-text,
-    .bumi-text,
-    .venus-text,
-    .mercury-text {
-        padding-right: 0;
-        padding-left: 0;
-        margin-bottom: 30px;
-    }
-    
-    .uranus-text {
-        transform: translateX(0);
-    }
-    
-    .bumi-text {
-        transform: translateX(0);
-    }
-    
-    #neptune,
-    #uranus,
-    #saturn,
-    #jupiter,
-    #mars,
-    #bumi,
-    #venus,
-    #mercury {
-        width: 70%;
-        max-width: 300px;
-    }
-    
-    .neptune-title,
-    .uranus-title,
-    .saturn-title,
-    .jupiter-title,
-    .mars-title,
-    .bumi-title,
-    .venus-title,
-    .mercury-title {
-        font-size: 2.2rem;
-    }
-}
-
-/* Responsive Space Exploration */
-@media (max-width: 768px) {
-    .apollo-container,
-    .voyager-container,
-    .hubble-container {
-        flex-direction: column;
-        margin: 100px auto;
-    }
-    
-    .mission-facts {
-        justify-content: center;
-    }
-    
-    .text-9,
-    .text-11 {
-        font-size: 2.2rem;
-        margin-left: 0;
-    }
-    
-    .text-10 {
-        margin: 0 20px;
-    }
-}
-
-/* Responsive Gallery */
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Responsive Footer */
-@media (max-width: 768px) {
-    .footer-container {
-        height: auto;
-        padding-bottom: 20px;
-    }
-    
-    .footer-bottom-container {
-        margin-top: 40px;
-    }
-    
-    .footer-logo img {
-        transform: translateY(0);
-    }
-    
-    .footer-logo h1 {
-        font-size: 2rem;
-        transform: translateY(0);
-    }
-    
-    .footer-logo p {
-        transform: translateY(0);
-    }
-}
-
-/* Utility Classes for Responsive Design */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.d-block {
-    display: block;
-}
-
-.d-none {
-    display: none;
-}
-
-@media (min-width: 769px) {
-    .d-md-block {
-        display: block;
-    }
-    
-    .d-md-none {
-        display: none;
-    }
-}
-
-/* Mobile Menu Toggle (Optional Enhancement) */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-    
-    .top {
-        display: none;
-        width: 100%;
-    }
-    
-    .top.active {
-        display: flex;
-    }
-    
-    .top ul {
-        flex-direction: column;
-        width: 100%;
-    }
-}
-
-/* Improved responsive font sizes */
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-@media (min-width: 1024px) {
-    html {
-        font-size: 18px;
-    }
 }

@@ -6,4 +6,4 @@
 
 <h4>Preview</h4>
 
-<img src="">
+<img src="/Asset/img/SS.png">

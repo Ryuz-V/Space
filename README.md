@@ -10,5 +10,5 @@
 Step Into The Experience</h3>
 
 <p align="center">
-  <a href="https://ryuz-v.github.io/Space/" target="_blank"><strong>Deploy Here</strong></a>
+  <a href="https://ryuz-v.github.io/Space/" target="_blank"><strong>Deploy Now</strong></a>
 </p>

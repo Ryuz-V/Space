@@ -9,8 +9,6 @@
 <h3 align='center'>
 Step Into The Experience</h3>
 
-<div style="text-align: center; margin-top: 20px;">
-  <a href="https://ryuz-v.github.io/Space/" target="_blank">
-    Deploy Now
-  </a>
-</div>
+<p align="center">
+  <a href="https://ryuz-v.github.io/Space/" target="_blank"><strong>Deploy Here</strong></a>
+</p>

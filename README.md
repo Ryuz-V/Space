@@ -10,7 +10,7 @@
 Step Into The Experience</h3>
 
 <div style="text-align: center; margin-top: 20px;">
-  <a href="https://ryuz-v.github.io/Space/" target="_blank" style="padding: 12px 20px; background: #343434ff; color: white; border-radius: 10px; text-decoration: none; font-weight: bold; display: inline-block;">
+  <a href="https://ryuz-v.github.io/Space/" target="_blank">
     Deploy Now
   </a>
 </div>
